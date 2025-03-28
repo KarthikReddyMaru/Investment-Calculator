@@ -1,0 +1,21 @@
+
+<table>
+  <thead>
+    <tr>
+      <td>Year</td>
+      <td>Investment Value</td>
+      <td>Interest</td>
+      <td>Total Interest</td>
+      <td>Invested Capital</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let summary of investmentSummary">
+      <td> {{ summary.year }} </td>
+      <td> {{ summary.valueEndOfYear | currency:'INR' }} </td>
+      <td> {{ summary.interest | currency:'INR' }} </td>
+      <td> {{ summary.totalInterest | currency:'INR' }} </td>
+      <td> {{ summary.annualInvestment | currency:'INR' }} </td>
+    </tr>
+  </tbody>
+</table>

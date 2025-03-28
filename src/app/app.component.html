@@ -1,0 +1,10 @@
+<app-header />
+
+<app-investment-form (displaySummary)="onCalculate($event)" />
+<app-inverstment-summary
+  *ngIf="isCalculateClicked; else fallback"
+  [investmentSummary]="investmentSummary"
+/>
+<ng-template #fallback>
+  <p class="center">Please enter some values and click on "Calculate"</p>
+</ng-template>
