@@ -1,5 +1,5 @@
 import { InvestmentService } from '../investment-summary/investment-summary.service';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { InvestmentFormModel } from './investment-form.model';
 import { InvestmentSummaryModel } from '../investment-summary/investment-summary.model';
@@ -13,10 +13,10 @@ import { InvestmentSummaryModel } from '../investment-summary/investment-summary
 })
 export class InvestmentFormComponent {
   investmentForm: InvestmentFormModel = {
-    initialInvestment: 10000,
-    annualInvestment: 200,
-    expectedReturn: 12,
-    duration: 6
+    initialInvestment: signal(10000),
+    annualInvestment: signal(200),
+    expectedReturn: signal(12),
+    duration: signal(6)
   };
 
   @Output() displaySummary = new EventEmitter<InvestmentSummaryModel[]>();

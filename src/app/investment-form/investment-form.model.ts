@@ -1,6 +1,8 @@
+import { Signal } from "@angular/core";
+
 export interface InvestmentFormModel {
-  initialInvestment: number,
-  annualInvestment: number,
-  expectedReturn: number,
-  duration: number
+  initialInvestment: Signal<number>,
+  annualInvestment: Signal<number>,
+  expectedReturn: Signal<number>,
+  duration: Signal<number>
 }
